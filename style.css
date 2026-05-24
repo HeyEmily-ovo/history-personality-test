@@ -198,10 +198,12 @@ body {
   .test .question-card { padding: 1.5rem 1rem; }
   .test .q-text { font-size: 1.1rem; }
   .test .option { padding: 0.85rem 1rem; }
-  #radarChart { height: 320px; }
+  #radarChart { height: 360px; }
   #barChart { height: 260px; }
   .dim-analysis { grid-template-columns: 1fr; }
 }
+@media (max-width: 420px) {
+  #radarChart { height: 340px; }
 
 /* ===== Q-TABS ===== */
 .q-tabs-wrap { margin-bottom: 1rem; }

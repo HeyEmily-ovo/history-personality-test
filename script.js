@@ -524,12 +524,14 @@ function showResults() {
 function renderRadarChart(scores) {
   const dom = document.getElementById('radarChart');
   const chart = echarts.init(dom);
+  const w = dom.clientWidth;
+  const isNarrow = w < 500;
   chart.setOption({
     tooltip: { trigger: 'item' },
     legend: { bottom: 0, data: ['你的得分'], textStyle: { color: '#3C2415' } },
     radar: {
-      center: ['50%', '48%'],
-      radius: '70%',
+      center: ['50%', '50%'],
+      radius: isNarrow ? '52%' : '62%',
       indicator: [
         { name: '开放性 O', max: 100 },
         { name: '尽责性 C', max: 100 },
@@ -537,7 +539,7 @@ function renderRadarChart(scores) {
         { name: '宜人性 A', max: 100 },
         { name: '情绪稳定性 S', max: 100 },
       ],
-      axisName: { color: '#3C2415', fontSize: 13 },
+      axisName: { color: '#3C2415', fontSize: isNarrow ? 11 : 13 },
       shape: 'circle',
       splitArea: { areaStyle: { color: ['#FEF8F0', '#F9F6F0', '#FEF8F0', '#F9F6F0'] } }
     },
